@@ -17,8 +17,8 @@ if memo_type == 1
     memo = STDIN.readlines #STDINは標準入力のこと。(=foreachメソッド?)
 
     CSV.open("#{file_name}.csv","w") do |csv|
-     csv << ["{#memo}"]
-end
+     csv << memo  #文字列内で変数展開したい:#{}で囲む。→ 今回は文字列を含めないため不要。
+end               #再確認する。
 
 elsif memo_type == 2
     puts "拡張子を除いた既存のファイルを入力してください"
@@ -30,8 +30,8 @@ elsif memo_type == 2
     memo = STDIN.readlines
 
     CSV.open("#{file_name}.csv","a") do |csv|
-     csv << ["{#memo}"]
-end
+     csv << memo  #文字列内で変数展開したい:#{}で囲む。→ 今回は文字列を含めないため不要。
+end               #再確認する。
 
 else    
     puts "入力が正しくありません。1 または 2 を選択してください。"
